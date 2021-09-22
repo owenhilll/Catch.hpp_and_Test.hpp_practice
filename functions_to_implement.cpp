@@ -1,4 +1,6 @@
 /* String functions section */
+#include <vector>
+#include <iostream>
 
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
@@ -30,13 +32,30 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+    int sum =0;
+    for(int i=0;i<nums.size();i++){
+        sum+=nums[i];
+    }
+    return sum;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+    int product=1;
+    for(int i=0;i<nums.size();i++){
+        product*=nums[i];
+    }
+    return product;
+}
 
 // Adds an integer n to each element of a given vector
-std::vector<int> VectorPlusN(std::vector<int> v, int n);
+std::vector<int> VectorPlusN(std::vector<int> v, int n){
+    for(int i=0;i<v.size();i++){
+        v[i]+=n;
+    }
+    return v;
+}
 
 // Multiples an integer n with each element of a given vector
 std::vector<int> VectorTimesN(std::vector<int> v, int n);
@@ -112,6 +131,20 @@ std::vector<int> SubtractN(std::vector<int>, int n);
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
 
-int main(){
-  return 0;
-}
+// int main(){
+//     std::vector<int> nums;
+//     nums.push_back(1);
+//     nums.push_back(2);
+//     nums.push_back(3);
+//     nums.push_back(4);
+//     nums.push_back(5);
+//     std::cout << "Sum of a elements in vector: " << Sum(nums) << std::endl;
+//     nums = VectorPlusN(nums,5);
+//     std::cout << "Valuesof vector elements after 5 was added to each element: ";
+//     for(int i=0;i<nums.size();i++){
+//         std::cout<< nums[i] << " ";
+//     }
+//     std::cout<<std::endl;
+//     std::cout << "Product of a elements in vector: " << Product(nums) << std::endl;
+//     return 0;
+// }
