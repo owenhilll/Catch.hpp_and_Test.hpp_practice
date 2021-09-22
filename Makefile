@@ -6,5 +6,5 @@ all: test
 clean:
 	rm test
 
-test: functions_to_implement.cpp
-	$(CXX) $(CXXFLAGS) functions_to_implement.cpp -o test
+test: test.cpp
+	$(CXX) $(CXXFLAGS) test.cpp -o test
